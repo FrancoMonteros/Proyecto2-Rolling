@@ -11,6 +11,9 @@ body{
     background-position: center;
     background-attachment: fixed;
 }
+.menuSuperior{
+    opacity: 89%;
+}
 main{
     margin-top: 110px;
 }
@@ -44,7 +47,7 @@ main{
     width: 100%;
     max-width:483px;
     position: relative;
-    top: -250px;
+    top: -260px;
     transition: left 500ms cubic-bezier(0.175,0885,0320,1275);
 
 }
