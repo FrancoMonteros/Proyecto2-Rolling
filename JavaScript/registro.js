@@ -63,23 +63,32 @@ inputNombre.addEventListener("blur", () => {
     let contraseñaIncorrecta=document.getElementById("contraseñaIncorrecta")
     if (inputPassword.value !== inputPassword2.value) {
         contraseñaIncorrecta.innerHTML =`<h6 class="text-center text-danger text-uppercase border-light mt-2">${"Las contraseñas no coinciden"}</h6>`;
-         window.setTimeout(function(){window.location.reload()},2000);
+         window.setTimeout(function(){window.location.reload()},1000);
+         return false
+        
 
-    }}
+    } else return true
+}
 
 //*creamos eventos para el boton registar*//
     const handleSubmit=(e)=>{
     //*evita actualizar pagina
     e.preventDefault();
     let parrafo_error= document.getElementById(`parrafoError`)
-    let contraseñaIncorrecta= document.getElementById(`contraseñaIncorrecta`)
     //*creamos funciones para validar los campos del registro*//
     if (inputNombre.value === ""|| inputEmail.value==="" || inputPassword.value ==="" ||inputPassword2.value==="")
     { parrafo_error.innerHTML =`<h6 class="text-center text-danger text-uppercase border-light ">${"Favor de completar todo los campos"}</h6>`;
          window.setTimeout(function(){window.location.reload()},2000);
     //*hacemos un return para que corte la ejecucion
     return        
-   } 
+   }  
+   //* validamos los passwords para ver que coincidan:
+   if (inputPassword.value !== inputPassword2.value) {
+    contraseñaIncorrecta.innerHTML =`<h6 class="text-center text-danger text-uppercase border-light mt-2">${"Las contraseñas no coinciden"}</h6>`;
+     window.setTimeout(function(){window.location.reload()},1000);
+      //*hacemos un return para que corte la ejecucion
+     return  
+    } 
     //* creamos un nuevo usuario:
     const nuevoUsuario = new User(inputNombre.value,inputEmail.value,inputPassword.value);
     //*hago un push con los datos de los usuarios:
@@ -97,7 +106,7 @@ inputNombre.addEventListener("blur", () => {
     //*mando los datos a local storage usando metoso stringify
     localStorage.setItem(`datosUsuarios`,JSON.stringify(datosUsuraios))  
     //*utilizo window.location.reload para actualizar la pagina
-    window.location.reload()
+    window.location.reload( window.setTimeout(),1000)
     //*reseteo formulario para que puedan completar siguiente usuario:
     form.reset()
    
