@@ -61,7 +61,7 @@ inputNombre.addEventListener("blur", () => {
   }
    function verificarPasswords() {
     let contraseñaIncorrecta=document.getElementById("contraseñaIncorrecta")
-    if (inputPassword.value !== inputPassword2) {
+    if (inputPassword.value !== inputPassword2.value) {
         contraseñaIncorrecta.innerHTML =`<h6 class="text-center text-danger text-uppercase border-light mt-2">${"Las contraseñas no coinciden"}</h6>`;
          window.setTimeout(function(){window.location.reload()},2000);
 
