@@ -47,7 +47,7 @@ inputNombre.addEventListener("blur", () => {
       validatePass(inputPassword);
     });
     inputPassword2.addEventListener("blur", () => {
-      validatePass(inputPassword2);
+      validatePass, verificarPasswords(inputPassword2);
     });
   function validatePass(input) {
     let regPass = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
@@ -59,6 +59,13 @@ inputNombre.addEventListener("blur", () => {
       return false;
     }
   }
+   function verificarPasswords() {
+    let contraseñaIncorrecta=document.getElementById("contraseñaIncorrecta")
+    if (inputPassword.value !== inputPassword2) {
+        contraseñaIncorrecta.innerHTML =`<h6 class="text-center text-danger text-uppercase border-light mt-2">${"Las contraseñas no coinciden"}</h6>`;
+         window.setTimeout(function(){window.location.reload()},2000);
+
+    }}
 
 //*creamos eventos para el boton registar*//
     const handleSubmit=(e)=>{
