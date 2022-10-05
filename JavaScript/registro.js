@@ -16,9 +16,52 @@ console.log(form);
 //* creamos una variable para guardar en localStogare, o mostrar array vacio*//
 let datosUsuraios = JSON.parse(localStorage.getItem(`datosUsuraios`))||[];
 
+inputNombre.addEventListener("blur", () => {
+    requiredField(inputNombre);
+  });
+  function requiredField(input) {
+    if (input.value.trim().length > 0) {
+      input.className = "form-control is-valid";
+      return true;
+    } else {
+      input.className = "form-control is-invalid";
+      return false;
+    }
+  }
+
+  inputEmail.addEventListener("blur", () => {
+    validateEmail(inputEmail);
+  });
+  function validateEmail(input) {
+    let regEmail =
+      /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+    if (regEmail.test(input.value)) {
+      input.className = "form-control is-valid";
+      return true;
+    } else {
+      input.className = "form-control is-invalid";
+      return false;
+    }
+  }
+    inputPassword.addEventListener("blur", () => {
+      validatePass(inputPassword);
+    });
+    inputPassword2.addEventListener("blur", () => {
+      validatePass(inputPassword2);
+    });
+  function validatePass(input) {
+    let regPass = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
+    if (regPass.test(input.value)) {
+      input.className = "form-control is-valid";
+      return true;
+    } else {
+      input.className = "form-control is-invalid";
+      return false;
+    }
+  }
 
 //*creamos eventos para el boton registar*//
-const handleSubmit=(e)=>{
+    const handleSubmit=(e)=>{
     //*evita actualizar pagina
     e.preventDefault();
     let parrafo_error= document.getElementById(`parrafoError`)
@@ -29,9 +72,7 @@ const handleSubmit=(e)=>{
          window.setTimeout(function(){window.location.reload()},2000);
     //*hacemos un return para que corte la ejecucion
     return        
-   } else{}
-    
-
+   } 
     //* creamos un nuevo usuario:
     const nuevoUsuario = new User(inputNombre.value,inputEmail.value,inputPassword.value);
     //*hago un push con los datos de los usuarios:
