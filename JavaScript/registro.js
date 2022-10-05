@@ -21,28 +21,36 @@ let datosUsuraios = JSON.parse(localStorage.getItem(`datosUsuraios`))||[];
 const handleSubmit=(e)=>{
     //*evita actualizar pagina
     e.preventDefault();
+    let parrafo_error= document.getElementById(`parrafoError`)
+    let contraseñaIncorrecta= document.getElementById(`contraseñaIncorrecta`)
     //*creamos funciones para validar los campos del registro*//
-
+    if (inputNombre.value === ""|| inputEmail.value==="" || inputPassword.value ==="" ||inputPassword2.value==="")
+    { parrafo_error.innerHTML =`<h6 class="text-center text-danger text-uppercase border-light ">${"Favor de completar todo los campos"}</h6>`;
+         window.setTimeout(function(){window.location.reload()},2000);
+    //*hacemos un return para que corte la ejecucion
+    return        
+   } else{}
+    
 
     //* creamos un nuevo usuario:
     const nuevoUsuario = new User(inputNombre.value,inputEmail.value,inputPassword.value);
     //*hago un push con los datos de los usuarios:
     console.log(nuevoUsuario);
     //*console log para ver lo que tenemos 
-    datosUsuraios.push(nuevoUsuario)
+    datosUsuraios.push(nuevoUsuario);
     //*consulto que hay en el array
    console.log(datosUsuraios);
    //*creamos una alerta para que el usuario separ que la creacion fue exitosa
    Swal.fire(
        "Usuario creado",
        "Su usuario fue correctamente cargado",
-       "success"
-     );  
+       "success",
+     )
     //*mando los datos a local storage usando metoso stringify
     localStorage.setItem(`datosUsuarios`,JSON.stringify(datosUsuraios))  
     //*utilizo window.location.reload para actualizar la pagina
     window.location.reload()
-    //*reseteo formulario para que puedan completar siguiente producto
+    //*reseteo formulario para que puedan completar siguiente usuario:
     form.reset()
    
 }

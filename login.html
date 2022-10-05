@@ -78,11 +78,11 @@
                 <h2 class="text-center">Iniciar Sesion</h2>
                 <div class="mb-3">
                     <label for="inputEmail" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="inputEmail" placeholder="Ej: rollingcode@gmail.com" maxlength="70" >
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Ej: rollingcode@gmail.com" maxlength="70" >
                 </div>
                 <div class="mb-3">
                     <label for="inputPassword" class="form-label">Password</label>
-                    <input type="text" class="form-control" id="inputPassword" placeholder="Contraseña">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña">
                 </div>
                 <button class="btn bg-primary text-white align-items-center" type="submit">Ingresar</button>
                 <button class="btn bg-warning text-break mt-1" type="submit">Olvide mi contraseña</button>
@@ -98,18 +98,26 @@
                 </div>
                 <div class="mb-3">
                     <label for="inputEmailRegistro" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="inputEmailRegistro" placeholder="Ej: rollingcode@gmail.com" maxlength="70" >
+                    <input type="email" class="form-control" id="inputEmailRegistro" placeholder="Ej: rollingcode@gmail.com" maxlength="70" >
                     
                 </div>
                 <div class="mb-3">
-                    <label for="inputPasswordRegistro" class="form-label">Password</label>
-                    <input type="text" class="form-control" id="inputPasswordRegistro" placeholder="Contraseña">
+                    <label for="inputPasswordRegistro" class="form-label">Password</label>                    
+                    <input type="password" class="form-control" id="inputPasswordRegistro" placeholder="Contraseña">
                 </div>
                 <div class="mb-3">
                     <label for="inputPasswordRegistro2" class="form-label">Repetir Password</label>
-                    <input type="text" class="form-control" id="inputPasswordRegistro2" placeholder="Contraseña">
+                    <input type="password" class="form-control" id="inputPasswordRegistro2" placeholder="Contraseña">
+                    <div id="contraseñaIncorrecta">
+                        <!-- <h6 class="text-center text-danger text-uppercase border-light ">Las contraseñas no coinciden</h6> -->
+                    </div>
+                    
                 </div>
-                <button type="submit" class="btn bg-primary text-white">Registrarme</button>              
+                <div id="parrafoError">
+                    <!-- <h6 class="text-center text-danger text-uppercase border-light ">Favor de completar todo los campos</h6> -->
+                </div>
+                <button type="submit" class="btn bg-primary text-white">Registrarme</button>
+                
 
             </form>
         </div>          
