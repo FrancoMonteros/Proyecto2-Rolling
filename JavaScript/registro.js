@@ -105,10 +105,10 @@ inputNombre.addEventListener("blur", () => {
      )
     //*mando los datos a local storage usando metoso stringify
     localStorage.setItem(`datosUsuarios`,JSON.stringify(datosUsuraios))  
-    //*utilizo window.location.reload para actualizar la pagina
-    window.location.reload( window.setTimeout(),1000)
     //*reseteo formulario para que puedan completar siguiente usuario:
     form.reset()
+    //*utilizo window.location.reload para actualizar la pagina
+    window.location.reload( window.setTimeout(),1000)
    
 }
 /*creamos un evento para que el formulario escuche*/
