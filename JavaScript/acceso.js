@@ -1,5 +1,5 @@
 //*creamos un usuario Administracidor
-let usuarioAdmin = {nombre:"Admin",password:"Admin1234"};
+let usuarioAdmin = {email:"admin@admin.com",password:"Admin1234"};
 //* creamos las variables
 let datosUsuraios2 = JSON.parse(localStorage.getItem(`datosUsuraios`));
 let inputEmailAcceso = document.getElementById(`inputEmailAcceso`);
@@ -47,6 +47,17 @@ function ingresoUsuario (e){
   let parrafo_error2=document.getElementById(`parrafoError2`)
   if (inputEmailAcceso.value ===""||inputPasswordAcceso.value==="") {parrafo_error2.innerHTML=`<h6 class="text-center text-danger text-uppercase border-light ">${"Favor de completar todo los campos"}</h6>`;
   window.setTimeout(function(){window.location.reload()},2000);
+  return
+
+} if (inputEmailAcceso.value === "admin@admin.com" && inputPasswordAcceso.value=== "Admin1234") {
+  inicioSesion=true
+  alert("Usuario Admin Ingreso correctamente")
+  window.location.replace(`administrar.html`)
+}else {
+window.setTimeout(function(){window.location.reload(alert("Contraseña incorrecta"))},1000);
+return
+}  
+  
 }
 
-}
+
