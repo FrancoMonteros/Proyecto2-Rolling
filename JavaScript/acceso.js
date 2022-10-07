@@ -5,6 +5,7 @@ let datosUsuraios2 = JSON.parse(localStorage.getItem(`datosUsuraios`));
 let inputEmailAcceso = document.getElementById(`inputEmailAcceso`);
 let inputPasswordAcceso = document.getElementById(`inputPasswordAcceso`);
 let formularioLogin2 = document.getElementById(`RegistraseLogin`);
+let botonIniciarSesion = document.getElementById(`botonIniciarSesion`);
 let inicioSesion = false;
 
 //*asociando eventos y funciones *//
@@ -33,13 +34,19 @@ function validatePass2(input) {
   } else {
     input.className = "form-control is-invalid";
     return false;
-  }}
+  }
+} 
 
- 
-//   //* creamos una funcion para en logueo del usuario
-//   function logeoAcceso(e) {
-//     e.preventDefaul();
-//     if (condition) {
-        
-//     }
-//   }
+
+botonIniciarSesion.addEventListener("click",ingresoUsuario)
+//*creamos una funcion para validar ingreso al boton ingresar *//
+function ingresoUsuario (e){
+  //*evita actualizar pagina
+  e.preventDefault();
+  console.log(e);
+  let parrafo_error2=document.getElementById(`parrafoError2`)
+  if (inputEmailAcceso.value ===""||inputPasswordAcceso.value==="") {parrafo_error2.innerHTML=`<h6 class="text-center text-danger text-uppercase border-light ">${"Favor de completar todo los campos"}</h6>`;
+  window.setTimeout(function(){window.location.reload()},2000);
+}
+
+}

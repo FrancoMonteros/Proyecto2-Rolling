@@ -62,8 +62,8 @@
         <div class="cajaTrasera">
             <div class="Login">
                 <h3>Ya tienes cuenta?</h3>
-                <p>Inicia sesion para loguearte en la pagina</p>
-                <button class="m-2 btn btn-light"id="iniciarSesion">Iniciar Sesion</button>
+                <p>Logueate para iniciar sesion</p>
+                <button class="m-2 btn btn-light"id="iniciarSesion">Inicio</button>
             </div>
             <div class="registro">
                 <h3>No tengo cuenta!</h3>
@@ -84,14 +84,17 @@
                     <label for="inputPasswordAcceso" class="form-label">Password</label>
                     <input type="password" class="form-control" placeholder="Contraseña" id="inputPasswordAcceso">
                 </div>
-                <button class="btn bg-primary text-white align-items-center" type="submit">Ingresar</button>
-                <button class="btn bg-warning text-break mt-1" type="submit">Olvide mi contraseña</button>
-                <img src="./Img/Bob_login.webp" class="img-fluid" width="300px" alt="Bob_login">
+                <div id="parrafoError2">
+                    <!-- <h6 class="text-center text-danger text-uppercase border-light ">Favor de completar todo los campos</h6> -->
+                </div>
+                <button class="btn bg-primary text-white align-items-center" type="submit" id="botonIniciarSesion">Ingresar</button>
+                <button class="btn bg-warning text-break mt-1" type="submit" >Olvide mi contraseña</button>
+                <img src="./Img/Bob_login.webp" class="img-fluid" width="280px" alt="Bob_login">
 
             </form>
             <!-- Creamos el formulario para Registrarse: -->
             <form action="" class="Registrarse" id="RegistrarseForm">
-                <h2 class="text-center">Registrarse</h2>
+                <h2 class="text-center">Registrate</h2>
                 <div class="mb-3">
                     <label for="inputNombre" class="form-label">Nombre y Apellido </label>
                     <input type="text" class="form-control" id="inputNombre" placeholder="Nombre y Apellido" maxlength="70" >
