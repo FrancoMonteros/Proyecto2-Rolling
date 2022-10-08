@@ -49,7 +49,7 @@ function ingresoUsuario (e){
   window.setTimeout(function(){window.location.reload()},2000);
   return
 
-} if (inputEmailAcceso.value === "admin@admin.com" && inputPasswordAcceso.value=== "Admin1234") {
+} if (inputEmailAcceso.value === usuarioAdmin.email && inputPasswordAcceso.value=== usuarioAdmin.password) {
   inicioSesion=true
   alert("Usuario Admin Ingreso correctamente")
   window.location.replace(`administrar.html`)
