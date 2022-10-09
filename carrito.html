@@ -15,7 +15,8 @@
     <title>Crustaceo Cascarudo</title>
 </head>
 
-<body>
+<body onload="renderCarrito()"> 
+  <!-- cuando se carga el html de mi carrito y revisa el local storage -->
   <!-----Inicio del Navbar----->
   <header>
     <div class="container-fluid">
@@ -41,7 +42,7 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link text-light text-decoration-none text-uppercase fw-bolder mx-2"
-                  href="tienda.html">Administracion</a>
+                  href="administrar.html">Administracion</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-light text-decoration-none text-uppercase fw-bolder mx-2"
@@ -86,20 +87,7 @@
         </tr>
       </thead>
       <tbody class="tbody">
-        <tr>
-          <th scope="row">1</th>
-          <td class="tableProductos">
-            <img src="Img/imagen 2.jpg" alt="imagen2" class="d-none d-md-block">
-            <h6 class="titulo">Titulo</h6>
-          </td>
-          <td class="tablePrecio">
-            <p>$ 5</p>
-          </td>
-          <td class="tableCantidad">
-            <input type="number" min="1" value="1">
-            <button class="eliminar btn btn-danger fw-bold mx-3">X</button>
-          </td>
-        </tr>
+      
       </tbody>
     </table>
     <br><br>
@@ -186,7 +174,8 @@
 
 
 
-  <script src="JavaScript/app.js"></script>
+  
+  <script src="JavaScript/carrito.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
     crossorigin="anonymous"></script>
