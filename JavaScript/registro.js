@@ -14,7 +14,7 @@ let inputPassword2 = document.getElementById(`inputPasswordRegistro2`);
 let form = document.getElementById(`RegistrarseForm`);
 console.log(form);
 //* creamos una variable para guardar en localStogare, o mostrar array vacio*//
-let datosUsuraios = JSON.parse(localStorage.getItem(`datosUsuraios`))||[];
+let datosUsuraios = JSON.parse(localStorage.getItem(`datosUsuarios`))||[];
 
 inputNombre.addEventListener("blur", () => {
     requiredField(inputNombre);
@@ -63,54 +63,72 @@ inputNombre.addEventListener("blur", () => {
     let contraseñaIncorrecta=document.getElementById("contraseñaIncorrecta")
     if (inputPassword.value !== inputPassword2.value) {
         contraseñaIncorrecta.innerHTML =`<h6 class="text-center text-danger text-uppercase border-light mt-2">${"Las contraseñas no coinciden"}</h6>`;
-         window.setTimeout(function(){window.location.reload()},1000);
+        //  window.setTimeout(function(){window.location.reload()},1000);
          return false
         
 
     } else return true
 }
+//* va en admin.js
+ // //*inseratmos la funcion para ir agregando los usuarios a la pagina del Administrador
+    //   creadorFilaUsuario()
+// let ListaUsuarios = document.getElementById(`ListaUsuarios`);
+// const creadorFilaUsuario=()=>{
+//   datosUsuraios.forEach(usuariosRegistrados =>{
+//    return ListaUsuarios.innerHTML +=
+//    `<tr>
+//        <th class="text-center">${usuariosRegistrados.nombre}</th>
+//        <th class="text-center">${usuariosRegistrados.email}</th>
+//        <th class="text-center">${usuariosRegistrados.password}</th>
+//        <button class="btn btn-primary text-center" onclick="borrarProducto(${usuariosRegistrados.email})">Borrar</button>
+//        </th>
+//    </tr>`
+//  });
+// }
 
 //*creamos eventos para el boton registar*//
     const handleSubmit=(e)=>{
     //*evita actualizar pagina
     e.preventDefault();
-    let parrafo_error= document.getElementById(`parrafoError`)
-    //*creamos funciones para validar los campos del registro*//
-    if (inputNombre.value === ""|| inputEmail.value==="" || inputPassword.value ==="" ||inputPassword2.value==="")
-    { parrafo_error.innerHTML =`<h6 class="text-center text-danger text-uppercase border-light ">${"Favor de completar todo los campos"}</h6>`;
-         window.setTimeout(function(){window.location.reload()},2000);
+     let parrafo_error= document.getElementById(`parrafoError`)
+     //*creamos funciones para validar los campos del registro*//
+     if (inputNombre.value === ""|| inputEmail.value==="" || inputPassword.value ==="" ||inputPassword2.value==="")
+     { parrafo_error.innerHTML =`<h6 class="text-center text-danger text-uppercase border-light ">${"Favor de completar todo los campos"}</h6>`;
+     //*hacemos un return para que corte la ejecucion
+     return ;     
+    }  
+    //* validamos los passwords para ver que coincidan:
+    if (inputPassword.value !== inputPassword2.value) {
+     contraseñaIncorrecta.innerHTML =`<h6 class="text-center text-danger text-uppercase border-light mt-2">${"Las contraseñas no coinciden"}</h6>`;
     //*hacemos un return para que corte la ejecucion
-    return        
-   }  
-   //* validamos los passwords para ver que coincidan:
-   if (inputPassword.value !== inputPassword2.value) {
-    contraseñaIncorrecta.innerHTML =`<h6 class="text-center text-danger text-uppercase border-light mt-2">${"Las contraseñas no coinciden"}</h6>`;
-     window.setTimeout(function(){window.location.reload()},1000);
-      //*hacemos un return para que corte la ejecucion
-     return  
-    } 
+      return ; 
+     }
     //* creamos un nuevo usuario:
-    const nuevoUsuario = new User(inputNombre.value,inputEmail.value,inputPassword.value);
+    const nuevoUsuario = new User(inputNombre.value, inputEmail.value, inputPassword.value);
     //*hago un push con los datos de los usuarios:
     console.log(nuevoUsuario);
     //*console log para ver lo que tenemos 
     datosUsuraios.push(nuevoUsuario);
     //*consulto que hay en el array
    console.log(datosUsuraios);
-   //*creamos una alerta para que el usuario separ que la creacion fue exitosa
-   Swal.fire(
-       "Usuario creado",
-       "Su usuario fue correctamente cargado",
-       "success",
-     )
     //*mando los datos a local storage usando metoso stringify
-    localStorage.setItem(`datosUsuarios`,JSON.stringify(datosUsuraios))  
+   localStorage.setItem(`datosUsuarios`,JSON.stringify(datosUsuraios))  
+   //*creamos una alerta para que el usuario sepa que la creacion fue exitosa
+     Swal.fire(
+         "Usuario creado",
+         "Su usuario fue correctamente cargado",
+        "success",
+      )  
     //*reseteo formulario para que puedan completar siguiente usuario:
-    form.reset()
-    //*utilizo window.location.reload para actualizar la pagina
-    window.location.reload( window.setTimeout(),1000)
+      form.reset()
    
-}
+    //*utilizo window.location.reload para actualizar la pagina
+    window.location.reload() 
+}    
 /*creamos un evento para que el formulario escuche*/
 form.addEventListener(`submit`,handleSubmit);
 
+
+ 
+ 
+    
