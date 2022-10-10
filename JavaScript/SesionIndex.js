@@ -10,15 +10,15 @@ if (stateSesion) {
   if (user.email === usuarioAdmin.email && user.password===usuarioAdmin.password) {
     linkAdmin.className = "nav-link text-light text-decoration-none text-uppercase fw-bolder mx-2 nav-text";
     
-    exitBtn.className = "btn btn-dark ";
-    userBtn.className = "btn btn-dark ";
+    exitBtn.className = "btn text-light ";
+    userBtn.className = "btn text-light  ";
     userBtn.innerHTML = "Admin";
     userBtn.removeAttribute("href");
     exitBtn.addEventListener("click", closeSesion);
   } else {
     
-    exitBtn.className = "btn btn-dark";
-    userBtn.className = "btn btn-dark ";
+    exitBtn.className = "btn text-light ";
+    userBtn.className = "btn text-light ";
     userBtn.innerHTML = user.nombre;
     userBtn.removeAttribute("href");
     exitBtn.addEventListener("click", closeSesion);

@@ -66,7 +66,7 @@ function ingresoUsuario (e){
       sessionStorage.setItem("EstadoDeSesion", JSON.stringify(inicioSesion));
       localStorage.setItem("usuarioAdmin", JSON.stringify(usuarioAdmin));
       sessionStorage.setItem("usuarioActivo",JSON.stringify(usuarioAdmin))
-      window.setTimeout(function(){window.location.replace(`administrar.html`)},2000);
+      window.setTimeout(function(){window.location.replace(`index.html`)},2000);
       return
 
         } else{
