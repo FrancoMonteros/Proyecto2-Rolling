@@ -65,6 +65,7 @@ function ingresoUsuario (e){
       //* creamos un sesion Storage para que el logeo del usuario sea solo mientras esta en la pagina,para que cuando salga se cierre la sesion:
       sessionStorage.setItem("EstadoDeSesion", JSON.stringify(inicioSesion));
       localStorage.setItem("usuarioAdmin", JSON.stringify(usuarioAdmin));
+      sessionStorage.setItem("usuarioActivo",JSON.stringify(usuarioAdmin))
       window.setTimeout(function(){window.location.replace(`administrar.html`)},2000);
       return
 
@@ -76,7 +77,8 @@ function ingresoUsuario (e){
               parrafo_error2.innerHTML=`<h6 class="text-center text-succes text-uppercase border-light ">${"Bienvenido usuario!"}</h6>`             
               sessionStorage.setItem("EstadoDeSesion", JSON.stringify(inicioSesion));
               localStorage.setItem("usuarioComun", JSON.stringify(resultado));
-              window.location.replace(`carrito.html`)  
+              sessionStorage.setItem("usuarioActivo",JSON.stringify(resultado))
+              window.location.replace(`index.html`)  
             }else{ parrafo_error2.innerHTML=`<h6 class="text-center text-danger text-uppercase border-light ">${"Clave o Usuarios Incorrectos"}</h6>`;
             window.setTimeout(function(){window.location.reload()},2000);}
 
