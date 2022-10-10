@@ -5,9 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Crustaceo Cascarudo</title>
+    <!--Iconos-->
+    <script src="https://kit.fontawesome.com/dc50344c01.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./Css/login.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
   </head>
 
   <body>
@@ -29,7 +32,7 @@
                               aria-current="page" href="login.html">Login</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link text-light text-decoration-none text-uppercase fw-bolder mx-2"
+                          <a class="d-none" id="linkAdmin"
                               href="administrar.html">Administracion</a>
                       </li>
                       <li class="nav-item">
@@ -45,6 +48,11 @@
                               aria-current="page" href="galeria.html">Detalle</a>
                       </li>
                   </ul>
+                  <a type="button" class=" btn btn-dark d-none  text-white" id="userBtn" href="login.html"></a>
+                    <button type="button" class="btn btn-dark d-none" id="exitBtn">
+                      <i class="fas fa-sign-in-alt"></i>
+                    </button>
+
                 </div>
               </div>
             </nav>
@@ -197,10 +205,11 @@
 </footer>
 <!-- final Footer-->    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-    <!-- link JavaScript -->
+<!-- link JavaScript -->
     <script src="./JavaScript/login.js"></script>
     <script src="./JavaScript/registro.js"></script>
     <script src="./JavaScript/acceso.js"></script>
-    
+    <script src="./JavaScript/SesionIndex.js"></script>
+        
   </body>
 </html>
