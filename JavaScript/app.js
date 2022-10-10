@@ -1,7 +1,7 @@
 //* va en admin.js
  // //*inseratmos la funcion para ir agregando los usuarios a la pagina del Administrador
     //   creadorFilaUsuario()
-// let ListaUsuarios = document.getElementById(`ListaUsuarios`);
+// let ListaUsuarios = document.getElementById(`datosUsuarios`);
 // const creadorFilaUsuario=()=>{
 //   datosUsuraios.forEach(usuariosRegistrados =>{
 //    return ListaUsuarios.innerHTML +=
