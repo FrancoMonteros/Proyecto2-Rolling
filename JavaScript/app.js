@@ -77,7 +77,7 @@ function addItemCarrito(newItem) {
    
 }
 
-
+console.log("Hola leandro");
 
 // function carritoTotal() {
 //    let total = 0;
