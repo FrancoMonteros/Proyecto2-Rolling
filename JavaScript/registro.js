@@ -69,22 +69,6 @@ inputNombre.addEventListener("blur", () => {
 
     } else return true
 }
-//* va en admin.js
- // //*inseratmos la funcion para ir agregando los usuarios a la pagina del Administrador
-    //   creadorFilaUsuario()
-// let ListaUsuarios = document.getElementById(`ListaUsuarios`);
-// const creadorFilaUsuario=()=>{
-//   datosUsuraios.forEach(usuariosRegistrados =>{
-//    return ListaUsuarios.innerHTML +=
-//    `<tr>
-//        <th class="text-center">${usuariosRegistrados.nombre}</th>
-//        <th class="text-center">${usuariosRegistrados.email}</th>
-//        <th class="text-center">${usuariosRegistrados.password}</th>
-//        <button class="btn btn-primary text-center" onclick="borrarProducto(${usuariosRegistrados.email})">Borrar</button>
-//        </th>
-//    </tr>`
-//  });
-// }
 
 //*creamos eventos para el boton registar*//
     const handleSubmit=(e)=>{
