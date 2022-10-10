@@ -58,28 +58,21 @@ function addToCarritoItem(e) {
 }
 
 
-//agrego el nuevo item al carrito
+//agrego el nuevo item al carrito 
+//Para sumar cantidad
 function addItemCarrito(newItem) {
     carrito = JSON.parse(localStorage.getItem("nuevoProducto")) || []
-    //modifico la cantidad
-    if (carrito.includes(`${newItem.title}`)) {
-        console.log("el producto ya existe, tengo que resolver como cambiar la cantidad con el mismo producto");
+    //modifico la cantidad, primero busco dentro de carrido con Find
+    const result = carrito.find(producto => producto.title === newItem.title); //lo busco para compararlo si son iguales
+    if (result !== undefined) {
+        result.cantidad++;
+        let carrito2 = carrito.filter(producto => producto.title !== newItem.title) //construye un nuevo array y lo guarda dentro de carrito2
+        carrito2.push(result);
+        localStorage.setItem("nuevoProducto", JSON.stringify(carrito2))
     }else{
         carrito.push(newItem)
         localStorage.setItem("nuevoProducto", JSON.stringify(carrito))//guardamos en LocalStorage para renderizar en carrito.html
     }
-    //    if (carrito === null) { //consulto si en el carrito ya tengo algo creado 
-    //        carrito = []
-    //     }
-    // const inputElemento = tbody.getElementsByClassName('inputElemento')
-    // for (let i = 0; i < carrito.length ; i++){
-    //   if (carrito[i].title.trim() === newItem.title.trim()) {
-    //     carrito[i].cantidad++;
-    //     const inputValue = inputElemento[i].value
-    //     inputValue.value++;
-    //     return null;
-    // }
-    // }
     // carritoTotal()
    
 }
@@ -87,13 +80,14 @@ function addItemCarrito(newItem) {
 
 
 // function carritoTotal() {
-//   let total = 0;
-//   const itemCardTotal = document.querySelector('.intemCardTotal')
-//   carrito.forEach((item) => {
-//     const precio = Number(item.precio.replace("$", ''))
-//     total = total + precio*item.cantidad 
-//   })
-//   itemCardTotal.innerHTML = `Total $${total}`
-// }
+//    let total = 0;
+//    const itemCardTotal = document.querySelector('.intemCardTotal')
+//     carritoTotal = JSON.parse(localStorage.getItem("nuevoProducto")) || []
+//    carrito.forEach((item) => {
+//      const precio = Number(item.precio.replace("$", ''))
+//      total = total + parseInt(precio)*item.cantidad 
+//    })
+//    itemCardTotal.innerHTML = `Total $${total}`
+//  }
 
 
