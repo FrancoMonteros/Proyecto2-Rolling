@@ -17,6 +17,7 @@
 //*tengo q pasarle si o si al evento onclick el parametro para que la funcion se asocie al codigo, solo asi sabra a que codigo hace referencia cada producto*//
 
 //*creamos una funcion para borrar un producto:*//
+console.log("hola mundo");
 const borrarUsuario = (email) =>{
     console.log(email);
     //*para borrar un producto debo filtar el array y devolverlo sin el producto, para ello necesito el codigo para vincularlo, para eso usamos el metodo filter:
