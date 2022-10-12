@@ -105,7 +105,7 @@ inputNombre.addEventListener("blur", () => {
       )  
     //*reseteo formulario para que puedan completar siguiente usuario:
       form.reset()
-   
+     
     //*utilizo window.location.reload para actualizar la pagina
     window.location.reload() 
 }    
