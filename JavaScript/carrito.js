@@ -118,5 +118,3 @@ function CarritoTotal() {
     })
     itemCardTotal.innerHTML = `Total $${total}`
 }
-
-
