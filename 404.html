@@ -2,17 +2,16 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <!--Icono Pagina-->
-    <link rel="icon" href="Img/Krusty-Krab-PNG-Pic.png">
-    <!--Iconos-->
-    <script src="https://kit.fontawesome.com/dc50344c01.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="Css/style.css">
-     <!--Link Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <title>Crustaceo Cascarudo</title>
+    <link rel="stylesheet" href="./Css/login.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
+
   <body>
+    <!-- Inicio Header -->
     <header>
       <div class="menuSuperior container-fluid bg-dark">
           <nav class="navbar navbar-expand-lg bg-gradient">
@@ -53,23 +52,107 @@
 
                 </div>
               </div>
-            </nav>
-          
-
+            </nav>         
           </div>
       </div>
   </header>
+      
+  <!-- final Header -->
 
+  <!-- inicio error 404 -->
+
+  <section class="container text-center my-5">
     <section>
-      <div>
-        <img src="Img/404.png" alt="404" class="w-100" width="100">
-      </div>
+        <a href="index.html" class="btn btn-outline-warning my-3">
+            <i class="fas fa-home"></i> <img src="./Img/piñaHome.png" width="85" alt="inicio"> <br> Inicio <i class="fa fas-hundo"></i>
+        </a>
+        <img src="./Img/errorBob.jpg" alt="eror404" width="100%">
     </section>
+    
+    
 
-    <!--Link JavaScript-->
-    <script src="JavaScript/app.js"></script>
-    <!--Link Bootstrap-->
+    
+    
+    
+    
+    
+    
+    
+</main>
+<!-- final error 404 -->
+
+<!-- Inicio Footer-->
+<footer class="mt-5 container-fluid bg-dark text-white-50 justify-content-evenly py-1">
+  <div class="container">
+      <section class="row">
+          <article class="col-sm-12 col-md-6 col-lg-3 mb-3">
+              <h4>Navegación</h4>
+              <ul class="navbar-nav ms-auto mb-0 mb-lg-0">
+                  <li class="nav-item">
+                      <a class="nav-link text-white-50" href="/404.html">Nosotros</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link text-white-50" href="/404.html">Soporte</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link text-white-50" href="/404.html">Seguridad</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link text-white-50" href="/404.html">Politica de privacidad</a>
+                  </li>
+              </ul>
+          </article>
+          <article class="col-sm-12 col-md-4 col-lg-3 mb-3">
+              <h4 class="font">Store</h4>
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      <a class="nav-link active text-white-50" href="/404.html">Locales</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link text-white-50" href="/404.html">Financiamiento</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link text-white-50" href="/404.html">Estado de orden</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link text-white-50" href="/404.html">Franquicias</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link text-white-50" href="/404.html">Terminos y condiciones</a>
+                  </li>
+              </ul>
+          </article>
+          <article class="col-sm-12 col-md-4 col-lg-3 mb-3">
+              <h4>Metodos de pago</h4>
+              <img src="https://assets.jumpseller.com/store/bootstrap/themes/382017/pay-paypal.png?1619113824"
+                  width="100px" alt="Metodos de pago" />
+              <img src="https://assets.jumpseller.com/store/bootstrap/themes/382017/pay-visa.png?1619113824"
+                  width="100px" alt="Metodos de pago" />
+              <img src="https://assets.jumpseller.com/store/bootstrap/themes/382017/pay-master.png?1619113824"
+                  width="100px" alt="Metodos de pago" />
+              <img src="https://assets.jumpseller.com/store/bootstrap/themes/382017/pay-american.png?1619113824"
+                  width="100px" alt="Metodos de pago" />
+          </article>
+          <article class="col-sm-12 col-md-4 col-lg-3 mb-3">
+              <h4>Seguinos</h4>
+              <a class="btn btn-dark my-2>" href="https://www.instagram.com/accounts/login/?"><i
+                      class="fab fa-instagram fa-3x"></i></a>
+              <a class="btn btn-dark my-2" href="https://www.facebook.com/login/"><i
+                      class="fab fa-facebook-square fa-3x"></i></a>
+          </article>
+      </section>
+  </div>
+  <p class="text-center">
+      Fuerzas Gyniu &copy; Todos los derechos reservados
+  </p>
+</footer>
+<!-- final Footer-->    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <!-- link JavaScript -->
+    <script src="./JavaScript/login.js"></script>
+    <script src="./JavaScript/registro.js"></script>
+    <script src="./JavaScript/acceso.js"></script>
+    
   </body>
   <script src="./JavaScript/SesionIndex.js"></script>
 </html>
