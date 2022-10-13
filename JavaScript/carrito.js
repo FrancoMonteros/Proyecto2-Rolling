@@ -28,6 +28,38 @@ function renderCarrito() {
         tr.innerHTML = content; //agregamos la const Content
         tbody.append(tr) // agregamos al tbody la const tr
         
+        tr.querySelector(".eliminar").addEventListener('click',() => borrarProducto(item.title))
     })
     
 }
+
+const borrarProducto = (codigo) =>{
+  //vamos a filtrar el array y devolver un array nuevo (sin el producto eliminado)
+  //el metodo "filter" filtrarme los elementos y me devuelve un array nuevo
+  //el metodo "toString" me cambia el dato Tipo Number a un string
+  const carritoFiltrado = carrito.filter(producto =>{
+      return producto.title !== codigo.toString()
+  })
+  console.log(carritoFiltrado);
+  // ahora lo quiero igualar a mi array en admin.js
+  carrito = carritoFiltrado;
+  //luego lo guardo en localStorage
+  localStorage.setItem("nuevoProducto" , JSON.stringify(carrito)); 
+  //recargo la pagina con windows
+  window.location.reload();
+
+}
+
+function carritoTotal() {
+   let total = 0;
+   const itemCardTotal = document.querySelector('.intemCardTotal')
+   carrito.forEach((item) => {
+     const precio = Number(item.precio.replace("$", ''))
+     total = total + parseInt(precio)*item.cantidad 
+     console.log(precio);
+   })
+   itemCardTotal.innerHTML = `Total $${total}`
+ }
+window.addEventListener("load", () =>{
+  carritoTotal()
+})

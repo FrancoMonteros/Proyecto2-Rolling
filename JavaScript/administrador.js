@@ -134,32 +134,43 @@ const editarProducto = (codigo) =>{
 //llamo a la funcion para que me muestre el producto
 crearFilaProducto()
 
-
-
-
-
-//variables
-// let repeated;
-// //funciones
-// export function random() {
-//   do {
-//     let code = parseInt(Math.random() * 999999);
-//     repeated = repeatedCode(code);
-//     if (!repeated) {
-//       regCode.push(code);
-//       return code;
-//     } else {
-//       repeated = false;
-//     }
-//   } while (!repeated);
-// }
-
-// function repeatedCode(code) {
-//   for (let i = 0; i < listaProductos.length; i++) {
-//     if (code === listaProductos[i]) {
-//       repeated = true;
-//       break;
-//     }
-//   }
-//   return repeated;
-// }
+///////// Ahora Leo (read) ///////
+const crearFilaUsuarios = () => {
+    //recorro el array
+    arrayUsuarios.forEach((registroUsuarios) => {
+      //Funcion para crear productos
+      tbodyListaUsuarios.innerHTML += `
+      <tr>
+          <th class="text-center">${registroUsuarios.nombre}</th>
+          <th class="text-center">${registroUsuarios.email}</th>
+          <th class="text-center" >${registroUsuarios.password}</th>
+          <th class="text-center" >
+        <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>             
+    </tr>`;
+      const btn = tbodyListaUsuarios.getElementsByTagName("button")[0];
+      btn.onclick = () => {
+        borrarUsuario(registroUsuarios.email);
+      };
+      return tbodyListaUsuarios;
+    });
+  };
+  
+  //llamo a la funcion para que me muestre el producto
+  crearFilaUsuarios();
+  
+  //creamos una funcion para borrar los usuarios
+  const borrarUsuario = (email) => {
+    //vamos a filtrar el array y devolver un array nuevo (sin el producto eliminado)
+    //el metodo "filter" filtrarme los elementos y me devuelve un array nuevo
+    //el metodo "toString" me cambia el dato Tipo Number a un string
+    const arrayFiltradoUsuarios = arrayUsuarios.filter((usuarioBorrados) => {
+      return usuarioBorrados.email !== email.toString();
+    });
+    console.log(arrayFiltradoUsuarios);
+    // ahora lo quiero igualar a mi array en admin.js
+    arrayUsuarios = arrayFiltradoUsuarios;
+    //luego lo guardo en localStorage
+    localStorage.setItem("datosUsuarios", JSON.stringify(arrayUsuarios));
+    //recargo la pagina con windows
+    window.location.reload();
+  };

@@ -77,15 +77,6 @@ function addItemCarrito(newItem) {
    
 }
 
-// function carritoTotal() {
-//    let total = 0;
-//    const itemCardTotal = document.querySelector('.intemCardTotal')
-//     carritoTotal = JSON.parse(localStorage.getItem("nuevoProducto")) || []
-//    carrito.forEach((item) => {
-//      const precio = Number(item.precio.replace("$", ''))
-//      total = total + parseInt(precio)*item.cantidad 
-//    })
-//    itemCardTotal.innerHTML = `Total $${total}`
-//  }
+
 
 
