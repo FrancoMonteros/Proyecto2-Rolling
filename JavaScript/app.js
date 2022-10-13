@@ -73,10 +73,6 @@ function addItemCarrito(newItem) {
         carrito.push(newItem)
         localStorage.setItem("nuevoProducto", JSON.stringify(carrito))//guardamos en LocalStorage para renderizar en carrito.html
     }
-    // carritoTotal()
-   
 }
-
-
 
 
