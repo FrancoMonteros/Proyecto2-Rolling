@@ -2,6 +2,7 @@
 let carrito;
 const tbody = document.querySelector('.tbody')
 
+
 function renderCarrito() {
     
     tbody.innerHTML = ''
@@ -32,6 +33,7 @@ function renderCarrito() {
     })
     
 }
+
 
 function carritoTotal() {
    let total = 0;
