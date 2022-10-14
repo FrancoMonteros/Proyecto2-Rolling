@@ -37,8 +37,7 @@ const borrarUsuario = (email) =>{
 }
 //creo variables
 const clickButton = document.querySelectorAll('.button') //selecciono todos los botones
-const tbody = document.querySelector('.tbody')
-let carrito;
+
 let listbutton;
 
 function updateListButton() {
@@ -46,7 +45,7 @@ function updateListButton() {
 }
 
 //cargo el localstorage de listaproductos para verificar si tengo algo
-let listaProductos = JSON.parse(localStorage.getItem('listaProductos')) || []
+let listaProductos =JSON.parse(localStorage.getItem('listaProductos')) || []
 let catalago = document.getElementById("catalogo")
 
 function crearCard(producto) {
@@ -65,15 +64,15 @@ function crearCard(producto) {
     </div>
     `
 }
-listaProductos.forEach((producto) => {
+listaProductos.forEach((producto)=>{
     crearCard(producto)
     updateListButton()
 })
 
 
 //recorro la matriz para escuchar el evento click
-listbutton.forEach(btn => {
-    btn.addEventListener('click', addToCarritoItem)
+listbutton.forEach(btn =>{
+    btn.addEventListener('click', addToCarritoItem) 
 })
 
 //selecciono todo el contendor
@@ -81,11 +80,11 @@ function addToCarritoItem(e) {
     const button = e.target
     const item = button.closest('.card') //este metodo buscar el contenedor mas cercano
 
-    const itemTitle = item.querySelector('.card-title').textContent;//obtengo el titulo 
+    const itemTitle  = item.querySelector('.card-title').textContent;//obtengo el titulo 
     const itemPrecio = item.querySelector('.precio').textContent;//obtengo el precio
     const itemImagen = item.querySelector('.card-img-top').src //obtengo la imagen
-
-
+    
+    
     const newItem = {
         title: itemTitle,
         precio: itemPrecio,
@@ -107,53 +106,10 @@ function addItemCarrito(newItem) {
         let carrito2 = carrito.filter(producto => producto.title !== newItem.title) //construye un nuevo array y lo guarda dentro de carrito2
         carrito2.push(result);
         localStorage.setItem("nuevoProducto", JSON.stringify(carrito2))
-    } else {
+    }else{
         carrito.push(newItem)
         localStorage.setItem("nuevoProducto", JSON.stringify(carrito))//guardamos en LocalStorage para renderizar en carrito.html
     }
-     CarritoTotal()
-
-}
-//agregamos los productos y renderisamos a carrito.html
-function renderCarrito() {
-
-    tbody.innerHTML = ''
-    carrito = JSON.parse(localStorage.getItem("nuevoProducto")) || []
-    console.log(carrito);
-    carrito.map(item => {
-        const tr = document.createElement('tr')
-        tr.classList.add('itemCarrito')
-        const content = `
-        <th scope="row">1</th>
-          <td class="tableProductos">
-            <img src=${item.img} alt="imagen2" class="d-none d-md-block">
-            <h6 class="titulo">${item.title}</h6>
-          </td>
-          <td class="tablePrecio">
-            <p>${item.precio}</p>
-          </td>
-          <td class="tableCantidad">
-            <input type="number" min="1" value=${item.cantidad} class = "inputElemento">
-            <button class="eliminar btn btn-danger fw-bold mx-3">X</button>
-          </td>
-        `
-
-        tr.innerHTML = content; //agregamos la const Content
-        tbody.append(tr) // agregamos al tbody la const tr
-
-    })
-    CarritoTotal()
-}
-//agregamos la funcion para la suma de los productos al carrito de compra.
-function CarritoTotal() {
-    let total = 0;
-    const itemCardTotal = document.querySelector('.intemCardTotal')
-    CarritoTotal = JSON.parse(localStorage.getItem("nuevoProducto")) || []
-    carrito.forEach((item) => {
-        const precio = Number(item.precio.replace("$", ''))
-        total = total + parseInt(precio) * item.cantidad
-    })
-    itemCardTotal.innerHTML = `Total $${total}`
 }
 
 
