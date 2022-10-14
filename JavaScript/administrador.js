@@ -134,6 +134,9 @@ const editarProducto = (codigo) =>{
 //llamo a la funcion para que me muestre el producto
 crearFilaProducto()
 
+
+let tbodyListaUsuarios = document.getElementById("ListaUsuarios");
+let arrayUsuarios = JSON.parse(localStorage.getItem("datosUsuarios"));
 ///////// Ahora Leo (read) ///////
 const crearFilaUsuarios = () => {
     //recorro el array
@@ -155,8 +158,8 @@ const crearFilaUsuarios = () => {
     });
   };
   
-  //llamo a la funcion para que me muestre el producto
-  crearFilaUsuarios();
+//llamo a la funcion para que me muestre el producto
+crearFilaUsuarios();
   
   //creamos una funcion para borrar los usuarios
   const borrarUsuario = (email) => {

@@ -57,9 +57,7 @@
                   >
                 </li>
                 <li class="nav-item">
-                  <a
-                    class="nav-link text-light text-decoration-none text-uppercase fw-bolder mx-2"
-                    href="administrar.html"
+                  <a class="d-none" id="linkAdmin" href="administrar.html"
                     >Administracion</a
                   >
                 </li>
@@ -77,7 +75,25 @@
                     >Nosotros</a
                   >
                 </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link text-light text-decoration-none text-uppercase fw-bolder mx-2"
+                    aria-current="page"
+                    href="404.html"
+                    >Detalle</a
+                  >
+                </li>
               </ul>
+
+              <a
+                type="button"
+                class="btn btn-dark d-none text-white"
+                id="userBtn"
+                href="login.html"
+              ></a>
+              <button type="button" class="btn btn-dark d-none" id="exitBtn">
+                <i class="fas fa-sign-in-alt"></i>
+              </button>
             </div>
           </div>
         </nav>
@@ -132,29 +148,7 @@
               </div>
             </div>
           </div>
-          <!-- Fin de Card -->
-          <!-- Inicio de Card -->
-          <div class="col d-flex justify-content-center mb-4">
-            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem">
-              <h5 class="card-title pt-2 text-center text-white">
-                Card title 2
-              </h5>
-              <img src="Img/imagen 2.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <p class="card-text text-white-50 descripcion">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <h5 class="text-danger fw-bolder">
-                  Precio: <span class="precio">$5</span>
-                </h5>
-                <button class="btn btn-warning w-100 button">
-                  Añadir a Carrito
-                </button>
-              </div>
-            </div>
-          </div>
-          <!-- Fin de Card -->
+          <!-- Fin de Card -->
           <!-- Inicio de Card -->
           <div class="col d-flex justify-content-center mb-4">
             <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem">
@@ -177,10 +171,31 @@
             </div>
           </div>
           <!-- Fin de Card -->
+          <!-- Inicio de Card -->
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem">
+              <h5 class="card-title pt-2 text-center text-white">
+                Card title 4
+              </h5>
+              <img src="Img/imagen 4.jpeg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <p class="card-text text-white-50 descripcion">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <h5 class="text-danger fw-bolder">
+                  Precio: <span class="precio">$5</span>
+                </h5>
+                <button class="btn btn-warning w-100 button">
+                  Añadir a Carrito
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Fin de Card -->
         </div>
       </div>
     </section>
-
     <footer
       class="mt-4 container-fluid bg-dark text-white-50 justify-content-evenly py-1"
     >
