@@ -59,6 +59,13 @@ listbutton.forEach(btn =>{
 
 //selecciono todo el contendor
 function addToCarritoItem(e) {
+    //*creamos una alerta para que el usuario sepa que la creacion fue exitosa
+    Swal.fire(
+        "Agregado a Carrito",
+        "",
+        "success"
+    );
+
     const button = e.target
     const item = button.closest('.card') //este metodo buscar el contenedor mas cercano
 
