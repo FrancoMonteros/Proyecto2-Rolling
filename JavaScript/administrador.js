@@ -8,9 +8,19 @@ class Producto{
     }
 }
 
+/// codigo unico:
+const codigoUnico = "1234567890";
+function codificadorUnico(length=10) {
+  let result="";
+  for (let i = 0; i<=length; i++) {
+    result += codigoUnico.charAt(Math.floor(Math.random()*codigoUnico.length));    
+  }
+  return result;
+  
+}
 
-//obtengo los input del formulario
-let inputCodigo= document.getElementById("inputCodigo");
+//obtengo los input del formulario y declaro las variables
+let inputCodigo = codificadorUnico();
 let inputProducto = document.getElementById("inputProducto");
 let inputDescripcion = document.getElementById("inputDescripcion");
 let inputPrecio = document.getElementById("inputPrecio");
@@ -30,7 +40,7 @@ const handleSubmit=(e)=>{
     const regex = /^(ftp|http|https):\/\/[^ "]+$/;
     const validarUrl = regex.test(inputUrl.value);
     //esto es para validar si el usuario lleno todos los campos requeridos
-    if (inputCodigo.value === "" || inputProducto.value === "" || inputDescripcion.value === "" || inputPrecio.value === "" || inputUrl.value === "") {
+    if ( inputProducto.value === "" || inputDescripcion.value === "" || inputPrecio.value === "" || inputUrl.value === "") {
         alert("Debe completar todos los campos, son obligatorios")
         return;
     }
@@ -38,7 +48,7 @@ const handleSubmit=(e)=>{
         alert("La direccion URL, es Incorrecta")
         return;
     }
-   const nuevoProducto = new Producto (inputCodigo.value , inputProducto.value,
+   const nuevoProducto = new Producto ( inputCodigo, inputProducto.value,
     inputDescripcion.value, inputPrecio.value , inputUrl.value)
     
     console.log(nuevoProducto)
@@ -134,6 +144,9 @@ const editarProducto = (codigo) =>{
 //llamo a la funcion para que me muestre el producto
 crearFilaProducto()
 
+
+let tbodyListaUsuarios = document.getElementById("ListaUsuarios");
+let arrayUsuarios = JSON.parse(localStorage.getItem("datosUsuarios"));
 ///////// Ahora Leo (read) ///////
 const crearFilaUsuarios = () => {
     //recorro el array
@@ -155,8 +168,8 @@ const crearFilaUsuarios = () => {
     });
   };
   
-  //llamo a la funcion para que me muestre el producto
-  crearFilaUsuarios();
+//llamo a la funcion para que me muestre el producto
+crearFilaUsuarios();
   
   //creamos una funcion para borrar los usuarios
   const borrarUsuario = (email) => {

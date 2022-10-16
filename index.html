@@ -10,7 +10,6 @@
       src="https://kit.fontawesome.com/dc50344c01.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="Css/style.css" />
     <!--Link Bootstrap-->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
@@ -18,6 +17,8 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="Css/style.css" />
     <title>Crustaceo Cascarudo</title>
   </head>
 
@@ -52,14 +53,20 @@
                   <a
                     class="nav-link active text-light text-decoration-none text-uppercase fw-bolder mx-2"
                     aria-current="page"
+                    href="index.html"
+                    >Inicio</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link active text-light text-decoration-none text-uppercase fw-bolder mx-2"
+                    aria-current="page"
                     href="login.html"
                     >Login</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a
-                    class="nav-link text-light text-decoration-none text-uppercase fw-bolder mx-2"
-                    href="administrar.html"
+                  <a class="d-none" id="linkAdmin" href="administrar.html"
                     >Administracion</a
                   >
                 </li>
@@ -76,8 +83,18 @@
                     href="nosotros.html"
                     >Nosotros</a
                   >
-                </li>
+                </li>                
               </ul>
+
+              <a
+                type="button"
+                class="btn btn-dark d-none text-white"
+                id="userBtn"
+                href="login.html"
+              ></a>
+              <button type="button" class="btn btn-dark d-none" id="exitBtn">
+                <i class="fas fa-sign-in-alt"></i>
+              </button>
             </div>
           </div>
         </nav>
@@ -104,83 +121,22 @@
       </div>
     </header>
     <section>
+      <!-- Inicio boton-carrito-compras -->
+    <button class="btn-Carrito-Compras d-none d-xl-block "><a href="./carrito.html" ><i class="fa-solid fa-cart-shopping"></i></a></button>
+          <!-- Fin boton-carrito-compras -->
+
       <div class="container">
-        <h2 class="h4 m-4 text-center bg-light">Catalogo de Productos</h2>
+        <h2 class="m-4 text-center bg-light">Catalogo de Productos</h2>
         <div
           id="catalogo"
           class="row row-col-sm-1 row-col-md-2 row-col-lg-3 row-col-xl-4"
         >
-          <!-- Se crean las nuevas desde el administrador -->
-          <!-- Inicio de Card -->
-          <div class="col d-flex justify-content-center mb-4">
-            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem">
-              <h5 class="card-title pt-2 text-center text-white">
-                Card title 1
-              </h5>
-              <img src="Img/imagen 1.jpeg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <p class="card-text text-white-50 descripcion">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <h5 class="text-danger fw-bolder">
-                  Precio: <span class="precio">$5</span>
-                </h5>
-                <button class="btn btn-warning w-100 button">
-                  Añadir a Carrito
-                </button>
-              </div>
-            </div>
-          </div>
-          <!-- Fin de Card -->
-          <!-- Inicio de Card -->
-          <div class="col d-flex justify-content-center mb-4">
-            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem">
-              <h5 class="card-title pt-2 text-center text-white">
-                Card title 2
-              </h5>
-              <img src="Img/imagen 2.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <p class="card-text text-white-50 descripcion">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <h5 class="text-danger fw-bolder">
-                  Precio: <span class="precio">$5</span>
-                </h5>
-                <button class="btn btn-warning w-100 button">
-                  Añadir a Carrito
-                </button>
-              </div>
-            </div>
-          </div>
-          <!-- Fin de Card -->
-          <!-- Inicio de Card -->
-          <div class="col d-flex justify-content-center mb-4">
-            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem">
-              <h5 class="card-title pt-2 text-center text-white">
-                Card title 3
-              </h5>
-              <img src="Img/imagen 3.webp" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <p class="card-text text-white-50 descripcion">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <h5 class="text-danger fw-bolder">
-                  Precio: <span class="precio">$15</span>
-                </h5>
-                <button class="btn btn-warning w-100 button">
-                  Añadir a Carrito
-                </button>
-              </div>
-            </div>
-          </div>
-          <!-- Fin de Card -->
+
+
+          
         </div>
       </div>
     </section>
-
     <footer
       class="mt-4 container-fluid bg-dark text-white-50 justify-content-evenly py-1"
     >
@@ -277,7 +233,10 @@
     </footer>
 
     <!--Link JavaScript-->
-    <script src="/JavaScript/app.js"></script>
+    <script src="./JavaScript/app.js"></script>
+    <script src="./JavaScript/SesionIndex.js"></script>
+    <!-- Js de SweetAler -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!--Link Bootstrap-->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"

@@ -8,10 +8,11 @@
   <link rel="icon" href="Img/Krusty-Krab-PNG-Pic.png">
   <!--Iconos-->
   <script src="https://kit.fontawesome.com/dc50344c01.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="Css/style.css">
   <!--Link Bootstrap-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- Link CSS -->
+  <link rel="stylesheet" href="Css/style.css">
   <title>Crustaceo Cascarudo</title>
 </head>
 
@@ -33,25 +34,41 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
+                <a
+                  class="nav-link active text-light text-decoration-none text-uppercase fw-bolder mx-2"
+                  aria-current="page"
+                  href="index.html"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item">
                 <a class="nav-link active text-light text-decoration-none text-uppercase fw-bolder mx-2"
                   aria-current="page" href="login.html">Login</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light text-decoration-none text-uppercase fw-bolder mx-2"
-                  href="administrar.html">Administracion</a>
+                <a class="d-none" id="linkAdmin" href="administrar.html"
+                  >Administracion</a
+                >
               </li>
+              
               <li class="nav-item">
                 <a class="nav-link text-light text-decoration-none text-uppercase fw-bolder mx-2"
                   href="carrito.html">Carrito</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-light text-uppercase fw-bolder mx-2" href="nosotros.html">Nosotros</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-light text-decoration-none text-uppercase fw-bolder mx-2" aria-current="page"
-                  href="galeria.html">Detalle</a>
-              </li>
+              </li>              
             </ul>
+            <!-- Estos botones son necesarios para la sesion -->
+            <a
+            type="button"
+            class="btn btn-dark d-none text-white"
+            id="userBtn"
+            href="login.html"
+          ></a>
+          <button type="button" class="btn btn-dark d-none" id="exitBtn">
+            <i class="fas fa-sign-in-alt"></i>
+          </button>
           </div>
         </div>
       </nav>
@@ -85,11 +102,11 @@
         </div>
         <div class="mb-3">
           <label for="inputCodigo" class="form-label">Codigo de Producto</label>
-          <input type="text" class="form-control" id="inputCodigo" placeholder="COD">
+          <input type="text" class="form-control" id="inputCodigo" placeholder="Codigo Generado por Sistema" disabled>
         </div>
         <div class="mb-3">
           <label for="inputDescripcion" class="form-label">Descripcion</label>
-          <textarea class="form-control" id="inputDescripcion" rows="3"></textarea>
+          <textarea class="form-control" id="inputDescripcion" rows="3" maxlength="250" minlength="4"></textarea>
         </div>
         <div class="mb-3">
           <label for="inputPrecio" class="form-label">Precio</label>
@@ -107,7 +124,7 @@
     <!--Gifts-->
     <section class="my-5 col-md-6 d-none d-md-block">
       <div class=" d-none d-xl-block">
-        <div class="text-center"><img src="http://olegif.com/bin/gifs/00/56/91.gif"
+        <div class="text-center"><img src="/Img/bobBajonero.gif"
             alt="GIF: Bob Esponja montando una hamburguesa" class="img-rounded img-gif"></div>
         <div class="v4dQwb text-center" jsname="P3Vluc" role="region"><a role="link" tabindex="0" rel="noopener"
             target="_blank"
@@ -127,7 +144,7 @@
     <hr>
     <!-- Listado de Productos -->
     <section class="my-1">
-      <h2 class="text-center">Listado de Productos</h2>
+      <h2 class="m-4 text-center bg-light">Listado de Productos</h2>
       <hr>
       <div class="table-responsive">
         <table class="table my-5 border-0">
@@ -174,7 +191,7 @@
     </section>
     <section class="container">
       <hr>
-      <h3 class="text-center">Base de Usuarios:</h3>
+      <h2 class="m-4 text-center bg-light">Base de Usuarios:</h2>
       <hr>
       <div class="table-responsive">
           <table class="table my-5 border-0">
@@ -267,10 +284,11 @@
     </p>
   </footer>
 
-
-
   <!--Link JavaScript-->
   <script src="JavaScript/administrador.js"></script>
+<!-- js que marca el usuario activo -->
+  <script src="./JavaScript/SesionIndex.js"></script>
+
   <!--Link Bootstrap-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
