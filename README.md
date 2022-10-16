@@ -26,14 +26,14 @@
 
 
 
-- (Colocar una vez subido a un servidor)
-- Usuario Administrador (Usuario: "admin". Password: "admin")
+- https://crustaceocascarudo.netlify.app/
+- Usuario Administrador (Usuario: "admin". Password: "Admin1234")
 
 ------------
 
 
 ##BUGS
-- Presente algunas veces problemas con los efectos de las paginas solo en el navegador Google Chrome, los mismos no estan presentes en Mozilla Firefox ni en Edge
+- Presentamos algunas veces problemas con los efectos de las paginas solo en el navegador Google Chrome, los mismos no estan presentes en Mozilla Firefox ni en Edge
 
 ------------
 
@@ -41,7 +41,6 @@
 - Boostrap v5.2
 - Fontawesome
 - SweetAlert
-- AOS-Animate On Scroll Library
 
 ------------
 
