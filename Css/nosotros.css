@@ -6,6 +6,9 @@ body{
     margin: 0;
     padding: 0;
     background: linear-gradient(to right, rgba(211, 248, 3, 0.957), rgba(215, 245, 40, 0.7));
+    background-image:linear-gradient(to right, rgba(45, 43, 43, 0.7), rgba(0, 0, 0, 0.7)), url(/Img/nosotrosImg4.jpg);
+    background-size: cover;
+    background-position: center;
 }
     /*---- Inicio del Header---- */
 header{
@@ -30,16 +33,3 @@ header .navbar-nav a:hover{
     height: 80px;
 }
     /*---- Fin de las Animaciones---- */
-
-  /*imagenes pagina nosotros*/
- #presentar{
-    height: 250px;
-    width: 500px;
- }
- body{
-    background-image:linear-gradient(to right, rgba(45, 43, 43, 0.7), rgba(0, 0, 0, 0.7)), url(/Img/nosotrosImg4.jpg);
-    background-size: cover;
-    background-position: center;
- }
- 
-
