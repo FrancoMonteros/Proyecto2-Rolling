@@ -10,7 +10,7 @@ function renderCarrito() {
     const tr = document.createElement("tr");
     tr.classList.add("itemCarrito");
     const content = `
-        <th scope="row">1</th>
+        <th scope="row">*</th>
           <td class="tableProductos">
             <img src=${item.img} alt="imagen2" class="d-none d-md-block">
             <h6 class="titulo">${item.title}</h6>
