@@ -20,7 +20,7 @@
 //creo variables
 const clickButton = document.querySelectorAll('.button') //selecciono todos los botones
 
-let listbutton;
+let listbutton = [];
 
 function updateListButton() {
     listbutton = document.querySelectorAll('.button')
@@ -40,17 +40,29 @@ let catalago = document.getElementById("catalogo")
 //     }    
 // }
 
-let producto={
+let product_1 ={
     producto: 'nicolas',
-    codigo: '007',
+    codigo: '008',
     url: 'viruel',
-    descripcion: 'fullstack'
+    descripcion: 'fullstack',
+    precio: 150
 }
-let muestrasFijas = [{producto, url, codigo, descripcion}]
+let product_2 ={
+    producto: 'leandro',
+    codigo: '009',
+    url: 'viruel',
+    descripcion: 'fullstack',
+    precio: 15
+}
+let product_3 ={
+    producto: 'sergio',
+    codigo: '010',
+    url: 'viruel',
+    descripcion: 'fullstack',
+    precio: 10
+}
 
-
-
-window.addEventListener('load', crearCard(muestrasFijas))
+let muestrasFijas = [ product_1 , product_2, product_3 ]
 
 
 function crearCard(producto) {
@@ -68,6 +80,11 @@ function crearCard(producto) {
         </div>
     </div>
     `
+}
+
+//en esta parte es el if para que se agreguen las muestras si no hay nada
+if (listaProductos.length === 0 ) {
+    listaProductos = muestrasFijas
 }
 listaProductos.forEach((producto)=>{
     crearCard(producto)
