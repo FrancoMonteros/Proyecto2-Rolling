@@ -1,22 +1,4 @@
 
-// //*creamos una funcion para borrar un producto:*//
-// const borrarUsuario = (email) =>{
-//     console.log(email);
-//     //*para borrar un producto debo filtar el array y devolverlo sin el producto, para ello necesito el codigo para vincularlo, para eso usamos el metodo filter:
-//     const ListaUsuariosFiltrados = ListaUsuarios.filter(usuariosRegistrados => {
-//         //*utilizamos el metodo toString ya que el array esta en formato string , el metodo tostring transforma un numero en string y lo vuelve comparable, luego le pido a la funcion que me traiga todo los productos salvo el que tenga el codigo:
-//         return usuariosRegistrados.email !== email.tostring()
-//     }) 
-//     console.log(ListaUsuariosFiltrados);
-//     //* ahora cambio mi arrayproducto por el nuevo arrayfiltrado, es decir lo reemplazo:*//
-//     datosUsuraios = ListaUsuariosFiltrados;
-//     //* ahora necesito enviar el nuevo array a JSON:*//
-//     localStorage.setItem(`ListaUsuarios`,JSON.stringify(datosUsuraios))
-//     //*actualizo la pagina para cargar los cambios*//
-//     window.location.reload()
-
-
-// }
 //creo variables
 const clickButton = document.querySelectorAll('.button') //selecciono todos los botones
 
@@ -31,35 +13,27 @@ let listaProductos =JSON.parse(localStorage.getItem('listaProductos')) || []
 let catalago = document.getElementById("catalogo")
 
 
-// class HamburguesaFija{
-//     constructor(producto, url, descripcion, precio){
-//         this.producto = producto;
-//         this.url = url;
-//         this.descripcion = descripcion;
-//         this.precio = precio
-//     }    
-// }
 
 let product_1 ={
-    producto: 'nicolas',
-    codigo: '008',
-    url: 'viruel',
-    descripcion: 'fullstack',
-    precio: 150
+    producto: 'Sergio Burguer',
+    codigo: '5241268963',
+    url: 'https://images.pexels.com/photos/1639565/pexels-photo-1639565.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    descripcion: 'Doble medallon de carne, con salsa barbaco y cebollar caramelizadas',
+    precio: 650
 }
 let product_2 ={
-    producto: 'leandro',
-    codigo: '009',
-    url: 'viruel',
-    descripcion: 'fullstack',
-    precio: 15
+    producto: 'Burguer a lo Alan',
+    codigo: '9568975263',
+    url: 'https://images.pexels.com/photos/1552641/pexels-photo-1552641.jpeg?auto=compress&cs=tinysrgb&w=600',
+    descripcion: 'Medallon simple, con tomate, lechuga y acompañado de papas ',
+    precio: 850
 }
 let product_3 ={
-    producto: 'sergio',
-    codigo: '010',
-    url: 'viruel',
-    descripcion: 'fullstack',
-    precio: 10
+    producto: 'Kangre Burguer',
+    codigo: '7854962589',
+    url: 'https://images.pexels.com/photos/1251198/pexels-photo-1251198.jpeg?auto=compress&cs=tinysrgb&w=600',
+    descripcion: 'La especialidad de la Casa, Hamburguesa a base de carne de cangrejo de fonde de Bikini',
+    precio: 950
 }
 
 let muestrasFijas = [ product_1 , product_2, product_3 ]
@@ -74,7 +48,7 @@ function crearCard(producto) {
             <div class="card-body ">
 
                 <p class="card-text text-white-50 descripcion">${producto.descripcion}</p>
-                <h5 class="text-danger fw-bolder">Precio: <span class="precio">${producto.precio}</span></h5>
+                <h5 class="text-danger fw-bolder">Precio: $ <span class="precio">${producto.precio}</span></h5>
                 <button class="btn btn-warning w-100 button" onclick= {addToCarritoItem} >Añadir a Carrito</button>
             </div>
         </div>

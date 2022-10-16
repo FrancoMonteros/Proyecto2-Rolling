@@ -82,13 +82,16 @@ function estadoSesioncompra() {
       window.location.replace(`login.html`);
     }, 2000);
   } else {
+    
     Swal.fire(
       "Compra Exitosa",
       "Recibiras un email cuando tu pedido este en camino",
       "success"
-    );
-    window.setTimeout(function () {
-      window.location.replace(`index.html`);
-    }, 2000);
+      );
+      window.location.replace(`https://mpago.la/25qvCuf`);
+      
+    // window.setTimeout(function () {
+    //   window.location.replace(`index.html`);
+    // }, 2000);
   }
 }

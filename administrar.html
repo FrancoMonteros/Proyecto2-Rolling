@@ -8,10 +8,11 @@
   <link rel="icon" href="Img/Krusty-Krab-PNG-Pic.png">
   <!--Iconos-->
   <script src="https://kit.fontawesome.com/dc50344c01.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="Css/style.css">
   <!--Link Bootstrap-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- Link CSS -->
+  <link rel="stylesheet" href="Css/style.css">
   <title>Crustaceo Cascarudo</title>
 </head>
 
@@ -101,11 +102,11 @@
         </div>
         <div class="mb-3">
           <label for="inputCodigo" class="form-label">Codigo de Producto</label>
-          <input type="text" class="form-control" id="inputCodigo" placeholder="COD">
+          <input type="text" class="form-control" id="inputCodigo" placeholder="Codigo Generado por Sistema" disabled>
         </div>
         <div class="mb-3">
           <label for="inputDescripcion" class="form-label">Descripcion</label>
-          <textarea class="form-control" id="inputDescripcion" rows="3"></textarea>
+          <textarea class="form-control" id="inputDescripcion" rows="3" maxlength="250" minlength="4"></textarea>
         </div>
         <div class="mb-3">
           <label for="inputPrecio" class="form-label">Precio</label>
@@ -143,7 +144,7 @@
     <hr>
     <!-- Listado de Productos -->
     <section class="my-1">
-      <h2 class="text-center">Listado de Productos</h2>
+      <h2 class="m-4 text-center bg-light">Listado de Productos</h2>
       <hr>
       <div class="table-responsive">
         <table class="table my-5 border-0">
@@ -190,7 +191,7 @@
     </section>
     <section class="container">
       <hr>
-      <h3 class="text-center">Base de Usuarios:</h3>
+      <h2 class="m-4 text-center bg-light">Base de Usuarios:</h2>
       <hr>
       <div class="table-responsive">
           <table class="table my-5 border-0">
