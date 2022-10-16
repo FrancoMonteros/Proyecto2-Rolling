@@ -19,7 +19,11 @@ header .navbar-nav a:hover{
     background-color: rgb(186, 173, 31);
     border-radius: 8px;
 }
-.btn-user:hover{
+#userBtn:hover{
+    background-color: rgb(186, 173, 31);
+    border-radius: 8px;
+}
+#exitBtn:hover{
     background-color: rgb(186, 173, 31);
     border-radius: 8px;
 }
