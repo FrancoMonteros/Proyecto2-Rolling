@@ -13,13 +13,13 @@ if (stateSesion) {
     linkAdmin.className =
       "nav-link text-light text-decoration-none text-uppercase fw-bolder mx-2 nav-text";
     exitBtn.className = "btn text-light ";
-    userBtn.className = "btn text-light  ";
+    userBtn.className = "btn-user btn text-light  ";
     userBtn.innerHTML = "Admin";
     userBtn.removeAttribute("href");
     exitBtn.addEventListener("click", closeSesion);
   } else {
     exitBtn.className = "btn text-light ";
-    userBtn.className = "btn text-light ";
+    userBtn.className = "btn-user btn text-light ";
     userBtn.innerHTML = user.nombre;
     userBtn.removeAttribute("href");
     exitBtn.addEventListener("click", closeSesion);

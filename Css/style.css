@@ -19,6 +19,10 @@ header .navbar-nav a:hover{
     background-color: rgb(186, 173, 31);
     border-radius: 8px;
 }
+.btn-user:hover{
+    background-color: rgb(186, 173, 31);
+    border-radius: 8px;
+}
     /*---- Fin del Header---- */
 
     /*---- Animacion de las Card---- */

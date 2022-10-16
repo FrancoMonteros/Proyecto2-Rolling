@@ -30,6 +30,29 @@ function updateListButton() {
 let listaProductos =JSON.parse(localStorage.getItem('listaProductos')) || []
 let catalago = document.getElementById("catalogo")
 
+
+// class HamburguesaFija{
+//     constructor(producto, url, descripcion, precio){
+//         this.producto = producto;
+//         this.url = url;
+//         this.descripcion = descripcion;
+//         this.precio = precio
+//     }    
+// }
+
+let producto={
+    producto: 'nicolas',
+    codigo: '007',
+    url: 'viruel',
+    descripcion: 'fullstack'
+}
+let muestrasFijas = [{producto, url, codigo, descripcion}]
+
+
+
+window.addEventListener('load', crearCard(muestrasFijas))
+
+
 function crearCard(producto) {
     catalago.innerHTML += `
     <div class="col d-flex justify-content-center mb-4">
