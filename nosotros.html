@@ -11,7 +11,6 @@
       crossorigin="anonymous"
     ></script>
     <!-- Link CSS -->
-    <link rel="stylesheet" href="Css/style.css" />
     <link rel="stylesheet" href="Css/nosotros.css" />
     <!--Link Bootstrap-->
     <link
@@ -20,13 +19,15 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="Css/nosotros.css" />
     <title>Sobre Nosotros</title>
   </head>
 
   <body>
     <header>
       <div class="container-fluid">
-        <nav class="navbar navbar-expand-md bg-gradient">
+        <nav class="navbar navbar-expand-lg bg-gradient">
           <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
               <img
@@ -37,7 +38,7 @@
               />
             </a>
             <button
-              class="navbar-toggler"
+              class="navbar-toggler bg-warning"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent"
@@ -53,7 +54,7 @@
                   <a
                     class="nav-link active text-light text-decoration-none text-uppercase fw-bolder mx-2"
                     aria-current="page"
-                    href="/index.html"
+                    href="index.html"
                     >Inicio</a
                   >
                 </li>
@@ -65,22 +66,27 @@
                     >Login</a
                   >
                 </li>
-                
-              <li class="nav-item">
-                <a class="d-none" id="linkAdmin" href="administrar.html"
-                  >Administracion</a
-                >
-              </li>
-                
+                <li class="nav-item">
+                  <a class="d-none" id="linkAdmin" href="administrar.html"
+                    >Administracion</a
+                  >
+                </li>
                 <li class="nav-item">
                   <a
                     class="nav-link text-light text-decoration-none text-uppercase fw-bolder mx-2"
                     href="carrito.html"
                     >Carrito</a
                   >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link text-light text-uppercase fw-bolder mx-2"
+                    href="nosotros.html"
+                    >Nosotros</a
+                  >
                 </li>                
               </ul>
-              <!-- Estos botones son necesarios para la sesion -->
+
               <a
                 type="button"
                 class="btn btn-dark d-none text-white"
@@ -106,6 +112,12 @@
               >
             </p>
           </div>
+          <form action="" class="text-white fw-bolder span text-left">
+            Obtene tus Descuentos >
+            <a href="/login.html" class="btn btn-warning mb-4 btn-lg mt-3"
+              >Suscribete</a
+            >
+          </form>
         </div>
       </div>
     </header>
@@ -295,11 +307,6 @@
         Fuerzas Gyniu &copy; Todos los derechos reservados
       </p>
     </footer>
-
-    <!--Link JavaScript-->
-    <script src="JavaScript/app.js"></script>
-    <!-- js que marca el usuario activo -->
-    <script src="./JavaScript/SesionIndex.js"></script>
     <!--Link Bootstrap-->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"

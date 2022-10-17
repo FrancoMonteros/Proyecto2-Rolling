@@ -30,6 +30,7 @@ function renderCarrito() {
     tr.querySelector(".eliminar").addEventListener("click", () =>
       borrarProducto(item.title)
     );
+    tr.querySelector(".inputElemento").addEventListener('change', sumaCantidad);
   });
 }
 const borrarProducto = (codigo) => {
@@ -94,4 +95,18 @@ function estadoSesioncompra() {
     //   window.location.replace(`index.html`);
     // }, 2000);
   }
+}
+
+function sumaCantidad(e){
+  const sumaElemento = e.target
+  const tr = sumaElemento.closest('.itemCarrito') 
+  const  title = tr.querySelector('.titulo').textContent
+
+  carrito.forEach(item => {
+    if (item.title.trim() === title) {
+      sumaElemento.value < 1 ? (sumaElemento.value = 1) : sumaElemento.value;
+      item.cantidad = sumaElemento.value;
+      carritoTotal();
+    }
+  })
 }
